@@ -13,7 +13,7 @@ weatherForm.addEventListener('submit',(e)=>{
     const adress = adressInp.value
 
     //clear text messages content
-    pMsg1.textContent=''
+    pMsg1.textContent='Loading...'
     pMsg2.textContent=''
 
     //fetch by form input
@@ -22,8 +22,8 @@ weatherForm.addEventListener('submit',(e)=>{
             if(data.Error){
                 pMsg1.textContent= data.Error
             }else{
-                pMsg1.textContent= data.loctions
-                pMsg2.textContent= data.forecast
+                pMsg1.textContent= data.forecast
+                // pMsg2.textContent= data.forecast
             }
         })
     }) //E fetch

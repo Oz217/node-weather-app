@@ -29,7 +29,7 @@ hbs.registerPartials(partialsDirectoryPath)
 app.get('',(req,res)=>{
     res.render('index',{
         title:'Weather',
-        author:'Oz Shahori',
+        author:'Created By: Oz Shahori',
         stylePath: stylePath
     })
 })
