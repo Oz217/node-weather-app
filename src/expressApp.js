@@ -2,11 +2,11 @@
 const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
-
-const getCoord = require('./utils/locationCoord')
-const forecast = require('./utils/forecast')
-
 const app = express()
+
+    //import utility finctions
+    const getCoord = require('./utils/locationCoord')
+    const forecast = require('./utils/forecast')
 
 //Define paths for Express config 
 const publicDirectoryPath = path.join(__dirname,'../public')
@@ -14,6 +14,8 @@ const viewsDirectoryPath = path.join(__dirname,'../templates/views')
 const partialsDirectoryPath = path.join(__dirname,'../templates/partials')
 const stylePath = '/css/defultStyle.css'
 
+//Define server port
+const port = prosses.env.PORT || 3000
 //server serve public folder to client
 app.use(express.static(publicDirectoryPath))
 
@@ -96,6 +98,6 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
-    console.log('server listening')
+app.listen(port,()=>{
+    console.log('server listening on port'+ port)
 })
