@@ -15,7 +15,7 @@ const partialsDirectoryPath = path.join(__dirname,'../templates/partials')
 const stylePath = '/css/defultStyle.css'
 
 //Define server port
-const port = prosses.env.PORT || 3000
+const port = process.env.PORT || 3000
 //server serve public folder to client
 app.use(express.static(publicDirectoryPath))
 
